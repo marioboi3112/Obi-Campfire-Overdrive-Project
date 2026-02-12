@@ -1,0 +1,1 @@
+draw_text(0,0,$"Deaths: {oPlayer.death_count}")
