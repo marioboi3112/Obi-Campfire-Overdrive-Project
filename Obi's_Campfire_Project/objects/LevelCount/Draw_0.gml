@@ -1,0 +1,1 @@
+draw_text(230,0, $"Level: {oGameManager.level}")

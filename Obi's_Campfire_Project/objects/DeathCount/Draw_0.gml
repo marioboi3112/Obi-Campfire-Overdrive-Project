@@ -1,1 +1,1 @@
-draw_text(0,0,$"Deaths: {oPlayer.death_count}")
+draw_text(0,0,$"Deaths: {oGameManager.death_count}/3")

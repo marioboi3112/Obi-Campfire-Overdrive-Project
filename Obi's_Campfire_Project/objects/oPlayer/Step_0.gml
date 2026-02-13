@@ -30,20 +30,26 @@ if (place_meeting(x, y + 1, oSolid)) { // if heidi is on the ground
 }
 if (place_meeting(x, y, oSpikes)) { // if heidi collides with the spikes
 
-    death_count += 1
+	oGameManager.death_count += 1
 	room_restart() // restart the level
 	
 }
 if (place_meeting(x, y, oFlag)) {
 	// switch to second room
+	oGameManager.level += 1;
 	room_goto_next()
 }
 
 
+// game over screen if death > 3
+if (oGameManager.death_count >= 3) {
+	room_goto(Lose);
+}
+
 // restart game when player is out of bound
 if (y > room_height or y < 0 or x > room_width or x < 0) { // if the player is outside of the room
-    room_restart();
-	death_count += 1
+	    oGameManager.death_count += 1
+		room_restart();
 }
 // player rotation (face the direction of movement)
 if keyboard_check(vk_left) {
